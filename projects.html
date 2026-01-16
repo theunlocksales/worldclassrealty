@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - World Class Realty | Ongoing & Upcoming Projects</title>
+    <meta name="description" content="Explore our ongoing and upcoming residential projects in Indore. Premium flats, apartments, and housing societies by World Class Realty.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, rgba(45, 90, 160, 0.9) 0%, rgba(74, 127, 219, 0.85) 100%), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600') center/cover;
+            padding: 140px 20px 80px;
+            text-align: center;
+            color: var(--white);
+        }
+        .page-hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+        .breadcrumb {
+            font-size: 14px;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        .breadcrumb a {
+            color: var(--white);
+        }
+        .projects-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+        .project-tab {
+            padding: 12px 28px;
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-gray);
+            cursor: pointer;
+            position: relative;
+            transition: var(--transition);
+        }
+        .project-tab.active {
+            color: var(--primary-blue);
+        }
+        .project-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -22px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary-blue);
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .project-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+        .project-image {
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+        .project-status {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            padding: 6px 14px;
+            background: var(--primary-blue);
+            color: var(--white);
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 4px;
+        }
+        .project-status.upcoming {
+            background: #ff9800;
+        }
+        .project-status.completed {
+            background: #4caf50;
+        }
+        .project-info {
+            padding: 24px;
+        }
+        .project-info h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+        .project-location {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .project-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
+            padding: 15px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .feature-item {
+            text-align: center;
+        }
+        .feature-item i {
+            color: var(--primary-blue);
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        .feature-item span {
+            font-size: 12px;
+            color: var(--text-gray);
+            display: block;
+        }
+        .project-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+        .project-actions {
+            display: flex;
+            gap: 10px;
+        }
+        .btn-brochure {
+            flex: 1;
+            padding: 10px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border-radius: var(--radius);
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            transition: var(--transition);
+        }
+        .btn-brochure:hover {
+            background: var(--primary-dark);
+        }
+        .btn-enquire {
+            width: 42px;
+            height: 42px;
+            background: var(--gradient-blue);
+            color: var(--white);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        .btn-enquire:hover {
+            transform: scale(1.1);
+        }
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 32px;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .project-features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/919425937359" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header class="header scrolled" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">PTP</div>
+                <div class="logo-text">
+                    <span class="logo-name">World Class Realty</span>
+                    <span class="logo-tagline">Best Properties</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="nav-dropdown">
+                    <a href="properties.html" class="nav-link">Properties <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="properties.html?type=flat">Flats & Apartments</a>
+                        <a href="properties.html?type=house">Independent Houses</a>
+                        <a href="properties.html?type=land">Land & Plots</a>
+                        <a href="properties.html?type=villa">Villas</a>
+                        <a href="properties.html?type=commercial">Commercial</a>
+                    </div>
+                </div>
+                <a href="projects.html" class="nav-link active">Projects</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumb" data-aos="fade-up">
+                <a href="index.html">Home</a> / Projects
+            </div>
+            <h1 data-aos="fade-up" data-aos-delay="100">Our Projects</h1>
+            <p data-aos="fade-up" data-aos-delay="200">Explore our ongoing and upcoming residential projects</p>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="projects-tabs">
+                <button class="project-tab active" data-category="all">All Projects</button>
+                <button class="project-tab" data-category="ongoing">Ongoing</button>
+                <button class="project-tab" data-category="upcoming">Upcoming</button>
+                <button class="project-tab" data-category="completed">Completed</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="ongoing" data-aos="fade-up">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=700" alt="Prime Residency">
+                        <div class="project-status">Ongoing</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Prime Residency Apartments</h3>
+                        <p class="project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Vijay Nagar, Indore
+                        </p>
+                        <div class="project-features">
+                            <div class="feature-item">
+                                <i class="fas fa-building"></i>
+                                <span>2 & 3 BHK</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>900-1500 sqft</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-home"></i>
+                                <span>120 Units</span>
+                            </div>
+                        </div>
+                        <div class="project-price">Starting from ₹55 Lakhs</div>
+                        <div class="project-actions">
+                            <a href="javascript:void(0)" class="btn-brochure">Download Brochure</a>
+                            <a href="tel:9425937359" class="btn-enquire"><i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-category="upcoming" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700" alt="Taxfin Greens">
+                        <div class="project-status upcoming">Upcoming</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Taxfin Greens Villas</h3>
+                        <p class="project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Super Corridor, Indore
+                        </p>
+                        <div class="project-features">
+                            <div class="feature-item">
+                                <i class="fas fa-home"></i>
+                                <span>3 & 4 BHK</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>2000-3000 sqft</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-swimming-pool"></i>
+                                <span>Club House</span>
+                            </div>
+                        </div>
+                        <div class="project-price">Starting from ₹1.2 Cr</div>
+                        <div class="project-actions">
+                            <a href="javascript:void(0)" class="btn-brochure">Pre-Book Now</a>
+                            <a href="tel:9425937359" class="btn-enquire"><i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-category="completed" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=700" alt="Elite Homes">
+                        <div class="project-status completed">Completed</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Elite Homes Society</h3>
+                        <p class="project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Scheme 54, Indore
+                        </p>
+                        <div class="project-features">
+                            <div class="feature-item">
+                                <i class="fas fa-building"></i>
+                                <span>1, 2 & 3 BHK</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>600-1400 sqft</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-home"></i>
+                                <span>80 Units</span>
+                            </div>
+                        </div>
+                        <div class="project-price">Starting from ₹45 Lakhs</div>
+                        <div class="project-actions">
+                            <a href="javascript:void(0)" class="btn-brochure">View Availability</a>
+                            <a href="tel:9425937359" class="btn-enquire"><i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card" data-category="ongoing" data-aos="fade-up">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=700" alt="Garden City Plots">
+                        <div class="project-status">Ongoing</div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Garden City Plots</h3>
+                        <p class="project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Pithampur Road, Indore
+                        </p>
+                        <div class="project-features">
+                            <div class="feature-item">
+                                <i class="fas fa-vector-square"></i>
+                                <span>Plot Size</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>1200-2400 sqft</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-road"></i>
+                                <span>40ft Roads</span>
+                            </div>
+                        </div>
+                        <div class="project-price">Starting from ₹25 Lakhs</div>
+                        <div class="project-actions">
+                            <a href="javascript:void(0)" class="btn-brochure">Plot Layout</a>
+                            <a href="tel:9425937359" class="btn-enquire"><i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content" data-aos="zoom-in">
+            <h2>Interested in Our Projects?</h2>
+            <p>Get detailed information and book your dream home</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn-white">Schedule Site Visit</a>
+                <a href="tel:9425937359" class="btn-outline-white">
+                    <i class="fas fa-phone"></i> Call for Details
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">
+                            <div class="logo-icon">PTP</div>
+                            <div class="logo-text">
+                                <span class="logo-name">World Class Realty</span>
+                                <span class="logo-tagline">Best Properties</span>
+                            </div>
+                        </div>
+                        <p>Indore's trusted real estate partner specializing in residential properties. Your dream home is our priority.</p>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://wa.me/919425937359"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="properties.html">Properties</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Property Types</h4>
+                        <ul>
+                            <li><a href="properties.html?type=flat">Flats & Apartments</a></li>
+                            <li><a href="properties.html?type=house">Independent Houses</a></li>
+                            <li><a href="properties.html?type=land">Land & Plots</a></li>
+                            <li><a href="properties.html?type=villa">Villas</a></li>
+                            <li><a href="properties.html?type=commercial">Commercial</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Contact Info</h4>
+                        <ul class="footer-contact">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Hatod, Indore</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <a href="tel:9425937359">=91 94259 37359 (RamKrishna Rathore)</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <a href="tel:7898096751">+91 78980 96751 (RamKrishna Rathore)</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <a href="worldclassrealty99@gmail.com">worldclassrealy99@gmail.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2026 World Class Realty. All Rights Reserved.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms & Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Developer Credit -->
+        <div class="developer-credit">
+            <div class="container">
+                <p>Designed & Developed by <a href="https://theunlocksales.in" target="_blank" rel="noopener">The Unlock Sales</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Project tabs functionality
+        const projectTabs = document.querySelectorAll('.project-tab');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        projectTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                projectTabs.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                const category = tab.getAttribute('data-category');
+                
+                // Show/hide project cards based on category
+                projectCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

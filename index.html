@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Class Realty | Best Real Estate Firm in Indore | Flats, Houses, Land</title>
+    <meta name="description" content="Find your dream place in Indore. Premium flats, residential houses, plots, and land at World Class Realty. professional real estate experts.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/919425937359" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">PTP</div>
+                <div class="logo-text">
+                    <span class="logo-name">World Class Realty</span>
+                    <span class="logo-tagline">Indore</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <div class="nav-dropdown">
+                    <a href="properties.html" class="nav-link">Properties <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="properties.html?type=flat">Flats & Apartments</a>
+                        <a href="properties.html?type=house">Residential Houses</a>
+                        <a href="properties.html?type=land">Land & Plots</a>
+                        <a href="properties.html?type=villa">Independent Villas</a>
+                        <a href="properties.html?type=commercial">Commercial</a>
+                    </div>
+                </div>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="tel:9425937359" class="nav-link call-now">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-video-bg">
+            <video autoplay muted loop playsinline>
+                <source src="video.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-text" data-aos="fade-up" data-aos-duration="800">
+                    <h1 class="hero-title">Find Your <span>Dream Home</span></h1>
+                    <p class="hero-description">Discover premium residential properties in Indore's best locations. Flats, houses, plots, and villas at Prime Taxfin Properties.</p>
+                    <div class="hero-buttons">
+                        <a href="properties.html" class="btn-primary btn-lg">Explore Properties</a>
+                        <a href="contact.html" class="btn-outline btn-lg">Free Consultation</a>
+                    </div>
+                </div>
+
+                <!-- Quick Search -->
+                <div class="quick-search" data-aos="fade-up" data-aos-delay="200">
+                    <div class="search-tabs">
+                        <button class="search-tab active" data-type="buy">Buy</button>
+                        <button class="search-tab" data-type="rent">Rent</button>
+                        <button class="search-tab" data-type="plot">Plot</button>
+                    </div>
+                    <form class="search-form">
+                        <div class="form-group">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <input type="text" placeholder="Location in Indore" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <i class="fas fa-home"></i>
+                            <select class="form-select">
+                                <option>Property Type</option>
+                                <option>Flat/Apartment</option>
+                                <option>Independent House</option>
+                                <option>Plot/Land</option>
+                                <option>Villa</option>
+                                <option>Commercial</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <i class="fas fa-rupee-sign"></i>
+                            <select class="form-select">
+                                <option>Budget Range</option>
+                                <option>₹20L - ₹50L</option>
+                                <option>₹50L - ₹1Cr</option>
+                                <option>₹1Cr - ₹2Cr</option>
+                                <option>₹2Cr+</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-search">
+                            <i class="fas fa-search"></i>
+                            Search
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="stat-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="stat-number" data-target="150">0</h3>
+                    <p class="stat-label">Properties Sold</p>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="stat-number" data-target="500">0</h3>
+                    <p class="stat-label">Happy Clients</p>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="stat-number" data-target="10">0</h3>
+                    <p class="stat-label">Years Experience</p>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="stat-number" data-target="25">0</h3>
+                    <p class="stat-label">Active Projects</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview -->
+    <section class="about-preview section-padding">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-images" data-aos="fade-right">
+                    <div class="about-main-img">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600" alt="World Class Realty">
+                    </div>
+                    <div class="about-badge">
+                        <div class="badge-content">
+                            <h4>10+</h4>
+                            <p>Years of Trust</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-content" data-aos="fade-left">
+                    <span class="section-tag">About World Class Realty</span>
+                    <h2 class="section-title">Your Trusted Real Estate <span>Partner</span></h2>
+                    <p class="section-text">World Class Realty has been serving Indore's real estate needs for over a decade. We specialize in residential properties including flats, houses, and land parcels in prime locations.</p>
+                    
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Transparent Deals</h4>
+                                <p>Clear documentation & honest pricing</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Prime Locations</h4>
+                                <p>Properties in best areas of Indore</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Legal Assistance</h4>
+                                <p>Complete legal verification & support</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="about.html" class="btn-primary">Learn More About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section class="properties-section section-padding bg-light">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Featured Properties</span>
+                <h2 class="section-title">Latest <span>Listings</span></h2>
+                <p class="section-subtitle">Handpicked selection of premium residential properties</p>
+            </div>
+
+            <div class="properties-grid">
+                <!-- Property 1 -->
+                <div class="property-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=700" alt="3BHK Flat">
+                        <div class="property-badge">Featured</div>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="property-info">
+                        <div class="property-header">
+                            <h3 class="property-title">Luxury 3BHK Flat</h3>
+                            <div class="property-price">₹85 Lakhs</div>
+                        </div>
+                        <p class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Vijay Nagar, Indore
+                        </p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 3 Beds</span>
+                            <span><i class="fas fa-bath"></i> 3 Baths</span>
+                            <span><i class="fas fa-ruler-combined"></i> 1,800 sqft</span>
+                        </div>
+                        <div class="property-footer">
+                            <a href="property-details.html?id=1" class="btn-view">View Details</a>
+                            <a href="tel:9425937359" class="btn-contact"><i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property 2 -->
+                <div class="property-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=700" alt="Residential House">
+                        <div class="property-badge hot">Hot Deal</div>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="property-info">
+                        <div class="property-header">
+                            <h3 class="property-title">Independent House</h3>
+                            <div class="property-price">₹2.2 Cr</div>
+                        </div>
+                        <p class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Scheme 54, Indore
+                        </p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 4 Beds</span>
+                            <span><i class="fas fa-bath"></i> 4 Baths</span>
+                            <span><i class="fas fa-ruler-combined"></i> 2,500 sqft</span>
+                        </div>
+                        <div class="property-footer">
+                            <a href="property-details.html?id=2" class="btn-view">View Details</a>
+                            <a href="tel:9425937359" class="btn-contact"><i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property 3 -->
+                <div class="property-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700" alt="Plot">
+                        <div class="property-badge new">Plot</div>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="property-info">
+                        <div class="property-header">
+                            <h3 class="property-title">Premium Plot</h3>
+                            <div class="property-price">₹75 Lakhs</div>
+                        </div>
+                        <p class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Super Corridor, Indore
+                        </p>
+                        <div class="property-features">
+                            <span><i class="fas fa-ruler-combined"></i> 3,000 sqft</span>
+                            <span><i class="fas fa-road"></i> 40ft Road</span>
+                            <span><i class="fas fa-compass"></i> East Facing</span>
+                        </div>
+                        <div class="property-footer">
+                            <a href="property-details.html?id=3" class="btn-view">View Details</a>
+                            <a href="tel:9425937359" class="btn-contact"><i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center" data-aos="fade-up">
+                <a href="properties.html" class="btn-primary btn-lg">View All Properties</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section section-padding">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Property Types</span>
+                <h2 class="section-title">Explore Our <span>Categories</span></h2>
+                <p class="section-subtitle">Wide range of residential properties</p>
+            </div>
+
+            <div class="categories-grid">
+                <div class="category-card" data-aos="zoom-in" data-aos-delay="0">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=500" alt="Flats">
+                    </div>
+                    <div class="category-content">
+                        <i class="fas fa-building"></i>
+                        <h3>Flats & Apartments</h3>
+                        <p>1RK to 4BHK apartments in prime locations</p>
+                        <span class="property-count">50+ Properties</span>
+                    </div>
+                </div>
+
+                <div class="category-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=500" alt="Houses">
+                    </div>
+                    <div class="category-content">
+                        <i class="fas fa-home"></i>
+                        <h3>Independent Houses</h3>
+                        <p>Spacious residential houses with gardens</p>
+                        <span class="property-count">25+ Properties</span>
+                    </div>
+                </div>
+
+                <div class="category-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=500" alt="Plots">
+                    </div>
+                    <div class="category-content">
+                        <i class="fas fa-vector-square"></i>
+                        <h3>Land & Plots</h3>
+                        <p>Residential plots for construction</p>
+                        <span class="property-count">40+ Properties</span>
+                    </div>
+                </div>
+
+                <div class="category-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=500" alt="Villas">
+                    </div>
+                    <div class="category-content">
+                        <i class="fas fa-warehouse"></i>
+                        <h3>Independent Villas</h3>
+                        <p>Luxury villas with premium amenities</p>
+                        <span class="property-count">15+ Properties</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us-section section-padding bg-light">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Why Choose Us</span>
+                <h2 class="section-title">Your Trusted Real Estate <span>Partner</span></h2>
+            </div>
+
+            <div class="why-us-grid">
+                <div class="why-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="why-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Trusted Dealings</h3>
+                    <p>10+ years of transparent and honest real estate dealings in Indore.</p>
+                </div>
+
+                <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="why-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Legal Expertise</h3>
+                    <p>Complete legal verification, documentation and registration assistance.</p>
+                </div>
+
+                <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="why-icon">
+                        <i class="fas fa-search-location"></i>
+                    </div>
+                    <h3>Prime Locations</h3>
+                    <p>Properties in Indore's most sought-after residential areas.</p>
+                </div>
+
+                <div class="why-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="why-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Dedicated customer service available round the clock.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section section-padding">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Client Testimonials</span>
+                <h2 class="section-title">What Our Clients <span>Say</span></h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Found my dream 3BHK flat through Prime Taxfin. Their team was professional and guided me through every step."</p>
+                    <div class="testimonial-author">
+                        <img src="https://ui-avatars.com/api/?name=Rahul+Sharma&background=2d5aa0&color=fff" alt="Rahul Sharma">
+                        <div>
+                            <h4>Rahul Sharma</h4>
+                            <p>Software Engineer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Bought a residential plot in Scheme 78. Complete legal support and smooth registration process."</p>
+                    <div class="testimonial-author">
+                        <img src="https://ui-avatars.com/api/?name=Neha+Patel&background=2d5aa0&color=fff" alt="Neha Patel">
+                        <div>
+                            <h4>Neha Patel</h4>
+                            <p>Business Owner</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Excellent service for my independent house purchase. Highly recommended for residential properties."</p>
+                    <div class="testimonial-author">
+                        <img src="https://ui-avatars.com/api/?name=Vikram+Singh&background=2d5aa0&color=fff" alt="Vikram Singh">
+                        <div>
+                            <h4>Vikram Singh</h4>
+                            <p>Doctor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content" data-aos="zoom-in">
+            <h2>Ready to Find Your Dream Home?</h2>
+            <p>Connect with our experts for free property consultation</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn-white">Schedule Visit</a>
+                <a href="tel:9425937359" class="btn-outline-white">
+                    <i class="fas fa-phone"></i> Call: 9425937359
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">
+                            <div class="logo-icon">PTP</div>
+                            <div class="logo-text">
+                                <span class="logo-name">World Class Realty</span>
+                                <span class="logo-tagline">Premium Properties</span>
+                            </div>
+                        </div>
+                        <p>Indore's trusted real estate partner specializing in residential properties. Your dream home is our priority.</p>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://wa.me/9425937359"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="properties.html">Properties</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Property Types</h4>
+                        <ul>
+                            <li><a href="properties.html?type=flat">Flats & Apartments</a></li>
+                            <li><a href="properties.html?type=house">Independent Houses</a></li>
+                            <li><a href="properties.html?type=land">Land & Plots</a></li>
+                            <li><a href="properties.html?type=villa">Villas</a></li>
+                            <li><a href="properties.html?type=commercial">Commercial</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Contact Info</h4>
+                        <ul class="footer-contact">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Hatod, Indore</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <a href="tel:9425937359">+91 94259 37359 (RamKrishna Rathore)</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <a href="tel:7898096751">+91 78980 96751 (RamKrishna Rathore)</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <a href="worldclassrealty99@gmail.com">worldclassrealy99@gmail.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2026 World Class Realty. All Rights Reserved.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms & Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Developer Credit -->
+        <div class="developer-credit">
+            <div class="container">
+                <p>Designed & Developed by <a href="https://theunlocksales.in" target="_blank" rel="noopener">The Unlock Sales</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

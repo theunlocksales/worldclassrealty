@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details - World Class Realty</title>
+    <meta name="description" content="Property details - World Class Realty">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .property-detail-hero {
+            padding-top: 100px;
+        }
+        .property-gallery {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .main-image {
+            height: 500px;
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+        .main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .thumbnail-grid {
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            gap: 15px;
+        }
+        .thumbnail {
+            height: 242px;
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .property-details-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .detail-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        .detail-title h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        .detail-location {
+            font-size: 16px;
+            color: var(--text-gray);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .detail-price {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+        .property-tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        .tag {
+            padding: 8px 16px;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 6px;
+        }
+        .tag.featured {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 30px;
+            background: var(--bg-light);
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+        }
+        .feature-box {
+            text-align: center;
+        }
+        .feature-box i {
+            font-size: 28px;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+        .feature-box h4 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        .feature-box p {
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+        .description-section {
+            margin-bottom: 30px;
+        }
+        .description-section h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        .description-text {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        .amenities-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .amenity-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--text-dark);
+        }
+        .amenity-item i {
+            color: var(--primary-blue);
+        }
+        .sidebar-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 120px;
+        }
+        .agent-info {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .agent-avatar {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            border: 3px solid var(--primary-blue);
+        }
+        .agent-info h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        .agent-info p {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+        .contact-form {
+            margin-top: 25px;
+        }
+        .form-field {
+            margin-bottom: 15px;
+        }
+        .form-field label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+        .form-field input,
+        .form-field textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius);
+            font-size: 14px;
+            transition: var(--transition);
+        }
+        .form-field input:focus,
+        .form-field textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+        .form-field textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .contact-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .btn-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px;
+            border-radius: var(--radius);
+            font-size: 14px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .btn-call {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+        .btn-whatsapp {
+            background: #25D366;
+            color: var(--white);
+        }
+        @media (max-width: 992px) {
+            .property-gallery {
+                grid-template-columns: 1fr;
+            }
+            .property-details-grid {
+                grid-template-columns: 1fr;
+            }
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .sidebar-card {
+                position: static;
+            }
+        }
+        @media (max-width: 576px) {
+            .detail-header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .amenities-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/919425937359" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header class="header scrolled" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">PTP</div>
+                <div class="logo-text">
+                    <span class="logo-name">World Class Realty</span>
+                    <span class="logo-tagline">Best Properties</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="nav-dropdown">
+                    <a href="properties.html" class="nav-link active">Properties <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="properties.html?type=flat">Flats & Apartments</a>
+                        <a href="properties.html?type=house">Independent Houses</a>
+                        <a href="properties.html?type=land">Land & Plots</a>
+                        <a href="properties.html?type=villa">Villas</a>
+                        <a href="properties.html?type=commercial">Commercial</a>
+                    </div>
+                </div>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="property-detail-hero section-padding">
+        <div class="container">
+            <div class="property-gallery" data-aos="fade-up">
+                <div class="main-image">
+                    <!-- OWNER: Replace this image URL with your property photo -->
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200" alt="Property Image">
+                </div>
+                <div class="thumbnail-grid">
+                    <div class="thumbnail">
+                        <!-- OWNER: Replace this image URL -->
+                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600" alt="Property Interior">
+                    </div>
+                    <div class="thumbnail">
+                        <!-- OWNER: Replace this image URL -->
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600" alt="Property Exterior">
+                    </div>
+                </div>
+            </div>
+
+            <div class="property-details-grid">
+                <div class="main-content">
+                    <div class="detail-header" data-aos="fade-up">
+                        <div class="detail-title">
+                            <!-- OWNER: Update property title here -->
+                            <h1>Luxury 3BHK Flat in Vijay Nagar</h1>
+                            <p class="detail-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <!-- OWNER: Update location here -->
+                                Vijay Nagar, Indore, Madhya Pradesh
+                            </p>
+                        </div>
+                        <!-- OWNER: Update price here -->
+                        <div class="detail-price">₹85 Lakhs</div>
+                    </div>
+
+                    <div class="property-tags" data-aos="fade-up">
+                        <!-- OWNER: Update tags as needed -->
+                        <span class="tag featured">For Sale</span>
+                        <span class="tag">Ready to Move</span>
+                        <span class="tag">RERA Approved</span>
+                    </div>
+
+                    <div class="features-grid" data-aos="fade-up">
+                        <!-- OWNER: Update features -->
+                        <div class="feature-box">
+                            <i class="fas fa-bed"></i>
+                            <h4>3</h4>
+                            <p>Bedrooms</p>
+                        </div>
+                        <div class="feature-box">
+                            <i class="fas fa-bath"></i>
+                            <h4>3</h4>
+                            <p>Bathrooms</p>
+                        </div>
+                        <div class="feature-box">
+                            <i class="fas fa-ruler-combined"></i>
+                            <h4>1,800</h4>
+                            <p>Sqft Area</p>
+                        </div>
+                        <div class="feature-box">
+                            <i class="fas fa-car"></i>
+                            <h4>2</h4>
+                            <p>Parking</p>
+                        </div>
+                    </div>
+
+                    <div class="description-section" data-aos="fade-up">
+                        <h3>About This Property</h3>
+                        <!-- OWNER: Update description here -->
+                        <p class="description-text">Beautiful 3BHK flat located in the prime area of Vijay Nagar. This spacious apartment features modern amenities and excellent ventilation.</p>
+                        <p class="description-text">The flat includes 3 bedrooms, 3 bathrooms, modular kitchen, living room, dining area, and 2 covered parking spaces. The building has 24/7 security, power backup, and lift facility.</p>
+                        <p class="description-text">Located near schools, hospitals, shopping centers, and with excellent connectivity to major roads. RERA approved and ready to move in.</p>
+                    </div>
+
+                    <div class="description-section" data-aos="fade-up">
+                        <h3>Property Features</h3>
+                        <div class="amenities-list">
+                            <!-- OWNER: Update amenities -->
+                            <div class="amenity-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Modular Kitchen</span>
+                            </div>
+                            <div class="amenity-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>24/7 Water Supply</span>
+                            </div>
+                            <div class="amenity-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Power Backup</span>
+                            </div>
+                            <div class="amenity-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Lift Facility</span>
+                            </div>
+                            <div class="amenity-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Security</span>
+                            </div>
+                            <div class="amenity-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Parking</span>
+                            </div>
+                            <div class="amenity-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>East Facing</span>
+                            </div>
+                            <div class="amenity-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Vastu Compliant</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar">
+                    <div class="sidebar-card" data-aos="fade-up">
+                        <div class="agent-info">
+                            <!-- OWNER: Can change agent photo URL -->
+                            <img src="https://ui-avatars.com/api/?name=Shubham+Patel&background=2d5aa0&color=fff&size=160" alt="Agent" class="agent-avatar">
+                            <h4>RamKrishna Rathore</h4>
+                            <p>Property Consultant</p>
+                            <p><strong>World Class Realty</strong></p>
+                        </div>
+
+                        <form class="contact-form" id="propertyInquiry">
+                            <div class="form-field">
+                                <label>Your Name *</label>
+                                <input type="text" name="name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-field">
+                                <label>Phone Number *</label>
+                                <input type="tel" name="phone" placeholder="Enter your phone" required>
+                            </div>
+                            <div class="form-field">
+                                <label>Email Address</label>
+                                <input type="email" name="email" placeholder="Enter your email">
+                            </div>
+                            <div class="form-field">
+                                <label>Message</label>
+                                <textarea name="message" placeholder="I'm interested in this property..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary" style="width: 100%;">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Inquiry
+                            </button>
+                        </form>
+
+                        <div class="contact-buttons">
+                            <a href="tel:9425937359" class="btn-icon btn-call">
+                                <i class="fas fa-phone"></i>
+                                Call Now
+                            </a>
+                            <a href="https://wa.me/919425937359" class="btn-icon btn-whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                WhatsApp
+                            </a>
+                        </div>
+                        
+                        <div style="margin-top: 20px; text-align: center;">
+                            <h4 style="margin-bottom: 10px;">Contact Numbers:</h4>
+                            <p style="font-size: 14px; margin: 5px 0;">
+                                <i class="fas fa-phone"></i> <a href="tel:9425937359">9425937359</a> (RamKrishna)
+                            </p>
+                            <p style="font-size: 14px; margin: 5px 0;">
+                                <i class="fas fa-phone"></i> <a href="tel:7898096751">7898096751</a> (RamKrishna)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Similar Properties</span>
+                <h2 class="section-title">You May Also <span>Like</span></h2>
+            </div>
+
+            <div class="properties-grid">
+                <!-- Similar Property 1 -->
+                <div class="property-card" data-aos="fade-up">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=700" alt="2BHK Flat">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="property-info">
+                        <div class="property-header">
+                            <h3 class="property-title">Premium 2BHK Flat</h3>
+                            <div class="property-price">₹55 Lakhs</div>
+                        </div>
+                        <p class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Sapna Sangeeta, Indore
+                        </p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 2 Beds</span>
+                            <span><i class="fas fa-bath"></i> 2 Baths</span>
+                            <span><i class="fas fa-ruler-combined"></i> 1,200 sqft</span>
+                        </div>
+                        <div class="property-footer">
+                            <a href="property-details.html?id=4" class="btn-view">View Details</a>
+                            <a href="tel:9425937359" class="btn-contact"><i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Similar Property 2 -->
+                <div class="property-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=700" alt="House">
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="property-info">
+                        <div class="property-header">
+                            <h3 class="property-title">Independent House</h3>
+                            <div class="property-price">₹1.8 Cr</div>
+                        </div>
+                        <p class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Scheme 78, Indore
+                        </p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 3 Beds</span>
+                            <span><i class="fas fa-bath"></i> 3 Baths</span>
+                            <span><i class="fas fa-ruler-combined"></i> 2,200 sqft</span>
+                        </div>
+                        <div class="property-footer">
+                            <a href="property-details.html?id=5" class="btn-view">View Details</a>
+                            <a href="tel:9425937359" class="btn-contact"><i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">
+                            <div class="logo-icon">PTP</div>
+                            <div class="logo-text">
+                                <span class="logo-name">World Class Realty</span>
+                                <span class="logo-tagline">Best Properties</span>
+                            </div>
+                        </div>
+                        <p>Indore's trusted real estate partner specializing in residential properties. Your dream home is our priority.</p>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://wa.me/919425937359"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="properties.html">Properties</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Property Types</h4>
+                        <ul>
+                            <li><a href="properties.html?type=flat">Flats & Apartments</a></li>
+                            <li><a href="properties.html?type=house">Independent Houses</a></li>
+                            <li><a href="properties.html?type=land">Land & Plots</a></li>
+                            <li><a href="properties.html?type=villa">Villas</a></li>
+                            <li><a href="properties.html?type=commercial">Commercial</a></li>
+                        </ul>
+                    </div>
+
+                       <div class="footer-col">
+                        <h4>Contact Info</h4>
+                        <ul class="footer-contact">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Hatod, Indore</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <a href="tel:9425937359">=91 94259 37359 (RamKrishna Rathore)</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <a href="tel:7898096751">+91 78980 96751 (RamKrishna Rathore)</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <a href="worldclassrealty99@gmail.com">worldclassrealy99@gmail.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2026 World Class Realty. All Rights Reserved.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms & Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Developer Credit -->
+        <div class="developer-credit">
+            <div class="container">
+                <p>Designed & Developed by <a href="https://theunlocksales.in" target="_blank" rel="noopener">The Unlock Sales</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Property Inquiry Form
+        document.getElementById('propertyInquiry')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Inquiry sent successfully! We will contact you soon.');
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>

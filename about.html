@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - World Class Realty | Best Real Estate Firm in Indore | Flats, Houses, Land</title>
+    <meta name="description" content="Read about World Class Realty - 10+ years of excellence in residential real estate in Indore. Our story, team, and commitment to customers.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, rgba(45, 90, 160, 0.9) 0%, rgba(74, 127, 219, 0.85) 100%), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600') center/cover;
+            padding: 140px 20px 80px;
+            text-align: center;
+            color: var(--white);
+        }
+        .page-hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+        .page-hero p {
+            font-size: 18px;
+            opacity: 0.95;
+        }
+        .breadcrumb {
+            font-size: 14px;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        .breadcrumb a {
+            color: var(--white);
+        }
+        .story-section {
+            padding: 80px 0;
+        }
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .story-img {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        .story-img img {
+            width: 100%;
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .value-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: var(--transition);
+        }
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        .value-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            background: rgba(45, 90, 160, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            color: var(--primary-blue);
+        }
+        .value-card h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+        .value-card p {
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+        .timeline {
+            max-width: 900px;
+            margin: 50px auto 0;
+        }
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 30px;
+            padding: 30px 0;
+            border-left: 3px solid var(--border-color);
+            margin-left: 60px;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 40px;
+            width: 15px;
+            height: 15px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--white);
+        }
+        .timeline-year {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            padding-left: 30px;
+        }
+        .timeline-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .timeline-content p {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .team-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: var(--transition);
+        }
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        .team-img {
+            height: 280px;
+            background: var(--bg-light);
+        }
+        .team-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .team-info {
+            padding: 24px;
+        }
+        .team-info h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        .team-role {
+            font-size: 14px;
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .team-bio {
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 32px;
+            }
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                margin-left: 30px;
+            }
+            .timeline-year {
+                padding-left: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/919425937359" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header class="header scrolled" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">PTP</div>
+                <div class="logo-text">
+                    <span class="logo-name">World Class Realty</span>
+                    <span class="logo-tagline">Best Properties</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="nav-dropdown">
+                    <a href="properties.html" class="nav-link">Properties <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="properties.html?type=flat">Flats & Apartments</a>
+                        <a href="properties.html?type=house">Independent Houses</a>
+                        <a href="properties.html?type=land">Land & Plots</a>
+                        <a href="properties.html?type=villa">Villas</a>
+                        <a href="properties.html?type=commercial">Commercial</a>
+                    </div>
+                </div>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="about.html" class="nav-link active">About Us</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumb" data-aos="fade-up">
+                <a href="index.html">Home</a> / About Us
+            </div>
+            <h1 data-aos="fade-up" data-aos-delay="100">About World Class Realty</h1>
+            <p data-aos="fade-up" data-aos-delay="200">Your trusted real estate partner in Indore for over a decade</p>
+        </div>
+    </section>
+
+    <section class="story-section">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-img" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700" alt="World Class Realty Team">
+                </div>
+                <div data-aos="fade-left">
+                    <span class="section-tag">Our Story</span>
+                    <h2 class="section-title">1+ Years of <span>Trust & Excellence</span></h2>
+                    <p class="section-text">Founded with a vision to make home buying simple and transparent, Prime Taxfin Properties has been serving Indore's real estate needs for over a decade.</p>
+                    <p class="section-text">We specialize in residential properties including flats, independent houses, and land parcels. Our team of experienced professionals ensures every client finds their dream home with complete legal security.</p>
+                    <p class="section-text">With 50+ properties sold and 50+ happy families, we continue to be the most trusted name in Indore's residential real estate market.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Our Values</span>
+                <h2 class="section-title">What Makes Us <span>Different</span></h2>
+                <p class="section-subtitle">The principles that guide our every decision</p>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Transparency</h3>
+                    <p>Clear pricing, honest communication, and no hidden charges in any transaction.</p>
+                </div>
+
+                <div class="value-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="value-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Legal Security</h3>
+                    <p>Complete legal verification and documentation for every property we deal with.</p>
+                </div>
+
+                <div class="value-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="value-icon">
+                        <i class="fas fa-search-location"></i>
+                    </div>
+                    <h3>Prime Locations</h3>
+                    <p>Properties only in approved and developing areas of Indore with good growth potential.</p>
+                </div>
+
+                <div class="value-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="value-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Customer First</h3>
+                    <p>Dedicated support from property search to registration and beyond.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Our Journey</span>
+                <h2 class="section-title">Key <span>Milestones</span></h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-year">2014</div>
+                    <div class="timeline-content">
+                        <h3>The Beginning</h3>
+                        <p>Prime Taxfin Properties established with focus on residential properties in Indore.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-year">2016</div>
+                    <div class="timeline-content">
+                        <h3>Expansion Phase</h3>
+                        <p>Expanded services to include land deals and plot sales. Team grew to 5 professionals.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-year">2018</div>
+                    <div class="timeline-content">
+                        <h3>RERA Compliance</h3>
+                        <p>All properties RERA verified. Achieved 100% customer satisfaction for 2 consecutive years.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-year">2021</div>
+                    <div class="timeline-content">
+                        <h3>Digital Transformation</h3>
+                        <p>Launched online property portal and virtual tours. Crossed 100+ properties sold milestone.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-content">
+                        <h3>Industry Recognition</h3>
+                        <p>50+ properties sold, 50+ happy families. Most trusted residential real estate brand in Indore.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Our Team</span>
+                <h2 class="section-title">Meet Our <span>Experts</span></h2>
+                <p class="section-subtitle">The team behind your dream home</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="team-img">
+                        <img src="https://ui-avatars.com/api/?name=Shubham+Patel&background=2d5aa0&color=fff&size=400" alt="Shubham Patel">
+                    </div>
+                    <div class="team-info">
+                        <h3>RamKrishna Rathore</h3>
+                        <p class="team-role">Founder & Property Consultant</p>
+                        <p class="team-bio">1+ years in real estate with expertise in residential properties and land deals.</p>
+                        <p><strong>Contact:</strong> 7898096751, 9425937359</p>
+                    </div>
+                </div>
+
+                <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-img">
+                        <img src="https://ui-avatars.com/api/?name=Consultant+Team&background=2d5aa0&color=fff&size=400" alt="Consultant Team">
+                    </div>
+                    <div class="team-info">
+                        <h3>Consultant Team</h3>
+                        <p class="team-role">Property Experts</p>
+                        <p class="team-bio">Dedicated team of property consultants helping you find the perfect home.</p>
+                        <p><strong>Email:</strong> worldclassrealty99@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content" data-aos="zoom-in">
+            <h2>Ready to Find Your Dream Home?</h2>
+            <p>Contact our experts for personalized property consultation</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn-white">Contact Us</a>
+                <a href="tel:9425937359" class="btn-outline-white">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">
+                            <div class="logo-icon">PTP</div>
+                            <div class="logo-text">
+                                <span class="logo-name">World Class Realty</span>
+                                <span class="logo-tagline">Best Properties</span>
+                            </div>
+                        </div>
+                        <p>Indore's trusted real estate partner specializing in residential properties. Your dream home is our priority.</p>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://wa.me/9425937359"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="properties.html">Properties</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Property Types</h4>
+                        <ul>
+                            <li><a href="properties.html?type=flat">Flats & Apartments</a></li>
+                            <li><a href="properties.html?type=house">Independent Houses</a></li>
+                            <li><a href="properties.html?type=land">Land & Plots</a></li>
+                            <li><a href="properties.html?type=villa">Villas</a></li>
+                            <li><a href="properties.html?type=commercial">Commercial</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Contact Info</h4>
+                        <ul class="footer-contact">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Indore, Madhya Pradesh</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <a href="tel:9425937359">+91 94259 37359 (RamKrishna Rathore)</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <a href="tel:7898096751">+91 78980 96751 (RamKrishna Rathore)</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:worldclassrealty99@gmail.com">worldclassrealty99@gmail.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2026 World Class Realty. All Rights Reserved.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms & Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Developer Credit -->
+        <div class="developer-credit">
+            <div class="container">
+                <p>Designed & Developed by <a href="https://theunlocksales.in" target="_blank" rel="noopener">The Unlock Sales</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

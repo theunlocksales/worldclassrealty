@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - World Class Realty | Get in Touch</title>
+    <meta name="description" content="Contact World Class Realty for premium residential properties in Indore. Call, email, or visit our office for property inquiries.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, rgba(45, 90, 160, 0.9) 0%, rgba(74, 127, 219, 0.85) 100%), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600') center/cover;
+            padding: 140px 20px 80px;
+            text-align: center;
+            color: var(--white);
+        }
+        .page-hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+        .breadcrumb {
+            font-size: 14px;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        .breadcrumb a {
+            color: var(--white);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+        }
+        .contact-info-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        .info-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            gap: 20px;
+            transition: var(--transition);
+        }
+        .info-card:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-md);
+        }
+        .info-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(45, 90, 160, 0.1) 0%, rgba(74, 127, 219, 0.1) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary-blue);
+            flex-shrink: 0;
+        }
+        .info-content h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        .info-content p {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+        .info-content a {
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+        .contact-form-wrapper {
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+        }
+        .contact-form-wrapper h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .contact-form-wrapper p {
+            font-size: 15px;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius);
+            font-size: 14px;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .map-section {
+            margin-top: 60px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        .map-section iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        @media (max-width: 576px) {
+            .page-hero h1 {
+                font-size: 32px;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .contact-form-wrapper {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/919425937359" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header class="header scrolled" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">PTP</div>
+                <div class="logo-text">
+                    <span class="logo-name">World Class Realty</span>
+                    <span class="logo-tagline">Best Properties</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="nav-dropdown">
+                    <a href="properties.html" class="nav-link">Properties <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="properties.html?type=flat">Flats & Apartments</a>
+                        <a href="properties.html?type=house">Independent Houses</a>
+                        <a href="properties.html?type=land">Land & Plots</a>
+                        <a href="properties.html?type=villa">Villas</a>
+                        <a href="properties.html?type=commercial">Commercial</a>
+                    </div>
+                </div>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumb" data-aos="fade-up">
+                <a href="index.html">Home</a> / Contact Us
+            </div>
+            <h1 data-aos="fade-up" data-aos-delay="100">Get in Touch</h1>
+            <p data-aos="fade-up" data-aos-delay="200">We're here to help you find your dream home</p>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="section-header">
+                        <span class="section-tag">Contact Information</span>
+                        <h2 class="section-title">Let's Start a <span>Conversation</span></h2>
+                        <p class="section-subtitle">Reach out to us through any of these channels</p>
+                    </div>
+
+                    <div class="contact-info-cards">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Primary Contact</h3>
+                                <p><a href="tel:9425937359">+91 94259 37359</a></p>
+                                <p>RamKrishna Rathore</p>
+                                <p>Mon - Sat: 9:00 AM - 8:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Alternative Numbers</h3>
+                                <p><a href="tel:9425937359">+91 94259 37359</a> (RamKrishna Rathore)</p>
+                                <p><a href="tel:7898096751">+91 78980 96751</a> (RamKrishna Rathore)</p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Email Address</h3>
+                                <p><a href="mailto:shubhampatel05@zohomail.in">worldclassrealty99@gmail.com</a></p>
+                                <p>We'll respond within 24 hours</p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Location</h3>
+                                <p>Indore, Madhya Pradesh</p>
+                                <p>Visit us for property consultation</p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>WhatsApp</h3>
+                                <p><a href="https://wa.me/919425937359" target="_blank">Chat with us on WhatsApp</a></p>
+                                <p>Quick responses guaranteed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper" data-aos="fade-left">
+                    <h3>Send Us a Message</h3>
+                    <p>Fill out the form below and we'll get back to you shortly</p>
+
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Your Name *</label>
+                                <input type="text" name="name" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number *</label>
+                                <input type="tel" name="phone" placeholder="Enter your phone" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="worldclassrealty99@gmail.com" name="email" placeholder="worldclassrealty99@gmail.com">
+                            </div>
+                            <div class="form-group">
+                                <label>Property Interest</label>
+                                <select name="interest">
+                                    <option>Flat/Apartment</option>
+                                    <option>Independent House</option>
+                                    <option>Land/Plot</option>
+                                    <option>Villa</option>
+                                    <option>Commercial Property</option>
+                                    <option>Property Valuation</option>
+                                    <option>General Inquiry</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Your Message *</label>
+                            <textarea name="message" placeholder="Tell us about your property requirements..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary btn-lg" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="map-section" data-aos="fade-up">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235013.7038109427!2d75.69903658203124!3d22.724065500000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fcad1b410ddb%3A0x96ec4da356240f4!2sIndore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1703234567890!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">
+                            <div class="logo-icon">PTP</div>
+                            <div class="logo-text">
+                                <span class="logo-name">World Class Realty</span>
+                                <span class="logo-tagline">Best Properties</span>
+                            </div>
+                        </div>
+                        <p>Indore's trusted real estate partner specializing in residential properties. Your dream home is our priority.</p>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://wa.me/919425937359"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="properties.html">Properties</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Property Types</h4>
+                        <ul>
+                            <li><a href="properties.html?type=flat">Flats & Apartments</a></li>
+                            <li><a href="properties.html?type=house">Independent Houses</a></li>
+                            <li><a href="properties.html?type=land">Land & Plots</a></li>
+                            <li><a href="properties.html?type=villa">Villas</a></li>
+                            <li><a href="properties.html?type=commercial">Commercial</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Contact Info</h4>
+                        <ul class="footer-contact">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Indore, Madhya Pradesh</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <a href="tel:9425937359">+91 94259 37359 (RamKrishna Rathore)</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <a href="tel:7898096751">+91 78980 96751 (RamKrishna Rathore)</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:worldclassrealty99@gmail.com">worldclassrealty99@gmail.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2026 World Class Realty. All Rights Reserved.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms & Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Developer Credit -->
+        <div class="developer-credit">
+            <div class="container">
+                <p>Designed & Developed by <a href="https://theunlocksales.in" target="_blank" rel="noopener">The Unlock Sales</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

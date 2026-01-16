@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - World Class Realty | Complete Real Estate Solutions</title>
+    <meta name="description" content="Complete real estate services including property buying, selling, legal assistance, and property management in Indore.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, rgba(45, 90, 160, 0.9) 0%, rgba(74, 127, 219, 0.85) 100%), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600') center/cover;
+            padding: 140px 20px 80px;
+            text-align: center;
+            color: var(--white);
+        }
+        .page-hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+        .breadcrumb {
+            font-size: 14px;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        .breadcrumb a {
+            color: var(--white);
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            text-align: center;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, rgba(45, 90, 160, 0.1) 0%, rgba(74, 127, 219, 0.1) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: var(--primary-blue);
+            transition: var(--transition);
+        }
+        .service-card:hover .service-icon {
+            background: var(--gradient-blue);
+            color: var(--white);
+            transform: rotateY(360deg);
+        }
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+        .service-card p {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .service-features {
+            list-style: none;
+            text-align: left;
+            margin-top: 20px;
+        }
+        .service-features li {
+            padding: 8px 0;
+            font-size: 14px;
+            color: var(--text-gray);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .service-features li i {
+            color: var(--primary-blue);
+            font-size: 12px;
+        }
+        .process-section {
+            background: var(--bg-light);
+        }
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .process-step {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            position: relative;
+        }
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-blue);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+        .process-step h4 {
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+        .process-step p {
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 32px;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/919425937359" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header class="header scrolled" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">PTP</div>
+                <div class="logo-text">
+                    <span class="logo-name">World Class Realty</span>
+                    <span class="logo-tagline">Best Properties</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="nav-dropdown">
+                    <a href="properties.html" class="nav-link">Properties <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="properties.html?type=flat">Flats & Apartments</a>
+                        <a href="properties.html?type=house">Independent Houses</a>
+                        <a href="properties.html?type=land">Land & Plots</a>
+                        <a href="properties.html?type=villa">Villas</a>
+                        <a href="properties.html?type=commercial">Commercial</a>
+                    </div>
+                </div>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="services.html" class="nav-link active">Services</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumb" data-aos="fade-up">
+                <a href="index.html">Home</a> / Services
+            </div>
+            <h1 data-aos="fade-up" data-aos-delay="100">Our Services</h1>
+            <p data-aos="fade-up" data-aos-delay="200">Complete real estate solutions for residential properties</p>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">What We Offer</span>
+                <h2 class="section-title">Comprehensive Real Estate <span>Solutions</span></h2>
+                <p class="section-subtitle">From property search to registration, we handle everything</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Property Search</h3>
+                    <p>Personalized property search based on your requirements, budget, and preferred locations in Indore.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Customized property shortlisting</li>
+                        <li><i class="fas fa-check"></i> Site visits & virtual tours</li>
+                        <li><i class="fas fa-check"></i> Multiple options comparison</li>
+                        <li><i class="fas fa-check"></i> Neighborhood analysis</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Property Buying</h3>
+                    <p>Complete assistance in purchasing residential properties with transparent pricing and negotiations.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Price negotiation support</li>
+                        <li><i class="fas fa-check"></i> Home loan assistance</li>
+                        <li><i class="fas fa-check"></i> Property valuation</li>
+                        <li><i class="fas fa-check"></i> Payment plan guidance</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Property Selling</h3>
+                    <p>Maximize your property value with our expert selling services and wide buyer network.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Property valuation</li>
+                        <li><i class="fas fa-check"></i> Marketing & advertising</li>
+                        <li><i class="fas fa-check"></i> Buyer screening</li>
+                        <li><i class="fas fa-check"></i> Negotiation support</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="service-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Legal Services</h3>
+                    <p>Complete legal verification, documentation, and registration assistance for property transactions.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Title verification</li>
+                        <li><i class="fas fa-check"></i> RERA compliance check</li>
+                        <li><i class="fas fa-check"></i> Agreement drafting</li>
+                        <li><i class="fas fa-check"></i> Registration assistance</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Investment Advisory</h3>
+                    <p>Expert guidance on property investments with market analysis and ROI projections.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Market research</li>
+                        <li><i class="fas fa-check"></i> Growth potential analysis</li>
+                        <li><i class="fas fa-check"></i> Rental yield calculations</li>
+                        <li><i class="fas fa-check"></i> Exit strategy planning</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3>Post-Purchase Support</h3>
+                    <p>Continued support after property purchase including documentation and utility connections.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Documentation filing</li>
+                        <li><i class="fas fa-check"></i> Utility connections</li>
+                        <li><i class="fas fa-check"></i> Society registration</li>
+                        <li><i class="fas fa-check"></i> Maintenance guidance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section section-padding">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Our Process</span>
+                <h2 class="section-title">How We <span>Work</span></h2>
+                <p class="section-subtitle">Simple 5-step process for smooth property transactions</p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-step" data-aos="fade-up" data-aos-delay="0">
+                    <div class="step-number">1</div>
+                    <h4>Requirement Analysis</h4>
+                    <p>Understanding your needs, budget, and preferences through detailed consultation.</p>
+                </div>
+
+                <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-number">2</div>
+                    <h4>Property Shortlisting</h4>
+                    <p>Curated property options matching your criteria with detailed information.</p>
+                </div>
+
+                <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">3</div>
+                    <h4>Site Visits</h4>
+                    <p>Physical property inspection and neighborhood evaluation with our experts.</p>
+                </div>
+
+                <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">4</div>
+                    <h4>Legal Verification</h4>
+                    <p>Complete legal due diligence, documentation, and agreement finalization.</p>
+                </div>
+
+                <div class="process-step" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step-number">5</div>
+                    <h4>Transaction & Registration</h4>
+                    <p>Smooth transaction process and complete registration assistance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content" data-aos="zoom-in">
+            <h2>Need Real Estate Assistance?</h2>
+            <p>Contact our experts for free consultation</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn-white">Schedule Consultation</a>
+                <a href="tel:9425937359" class="btn-outline-white">
+                    <i class="fas fa-phone"></i> Call: 9425937359
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">
+                            <div class="logo-icon">PTP</div>
+                            <div class="logo-text">
+                                <span class="logo-name">World Class Realty</span>
+                                <span class="logo-tagline">Best Properties</span>
+                            </div>
+                        </div>
+                        <p>Indore's trusted real estate partner specializing in residential properties. Your dream home is our priority.</p>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://wa.me/919425937359"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="properties.html">Properties</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Property Types</h4>
+                        <ul>
+                            <li><a href="properties.html?type=flat">Flats & Apartments</a></li>
+                            <li><a href="properties.html?type=house">Independent Houses</a></li>
+                            <li><a href="properties.html?type=land">Land & Plots</a></li>
+                            <li><a href="properties.html?type=villa">Villas</a></li>
+                            <li><a href="properties.html?type=commercial">Commercial</a></li>
+                        </ul>
+                    </div>
+
+                      <div class="footer-col">
+                        <h4>Contact Info</h4>
+                        <ul class="footer-contact">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Hatod, Indore</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <a href="tel:9425937359">=91 94259 37359 (RamKrishna Rathore)</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <a href="tel:7898096751">+91 78980 96751 (RamKrishna Rathore)</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <a href="worldclassrealty99@gmail.com">worldclassrealy99@gmail.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2026 World Class Realty. All Rights Reserved.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms & Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Developer Credit -->
+        <div class="developer-credit">
+            <div class="container">
+                <p>Designed & Developed by <a href="https://theunlocksales.in" target="_blank" rel="noopener">The Unlock Sales</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
